@@ -357,32 +357,29 @@ footer {
 }
 
 .mountain-block {
-  padding: 0px 0px 0px 0px;
   background: #fff;
   padding: 0px 0px 5% 0px;
 }
-@media (max-width: 479.98px) {
-  .mountain-block {
-    padding: 0px 0px 10% 0px;
-  }
+.mountain-block__container {
+  display: grid;
+  grid-auto-flow: row;
 }
-.mountain-block__upper-block {
-  margin: 0px 0px 3.4% 0px;
+.mountain-block__upperblock {
+  position: relative;
 }
-.mountain-block__down-block {
-  text-align: center;
-}
-.upper-block {
+
+.upperblock {
   position: relative;
   min-height: 411px;
   overflow: hidden;
 }
-.upper-block__content {
+.upperblock__content {
   position: absolute;
   top: 55%;
-  right: 0;
-  width: 100%;
+  right: 20px;
+  width: 70%;
   height: 100%;
+  z-index: 2;
   text-transform: uppercase;
   font-size: 1.875rem;
   font-weight: 700;
@@ -390,45 +387,54 @@ footer {
   letter-spacing: 0.0625rem;
   text-shadow: 0 3px 1px rgba(0, 0, 0, 0.6);
   color: #fff;
-  z-index: 1;
-  max-width: 770px;
 }
-@media (max-width: 1182px) {
-  .upper-block__content {
+@media (max-width: 1183px) {
+  .upperblock__content {
     font-size: 1.625rem;
-    top: 57%;
-    line-height: 2.625rem;
-    text-align: right;
-    padding: 0px 10px 0px 0px;
-  }
-}
-@media (max-width: 992.98px) {
-  .upper-block__content {
-    top: 60%;
-    font-size: 1.375rem;
-    line-height: 2.25rem;
-    max-width: 650px;
+    top: 45%;
   }
 }
 @media (max-width: 767.98px) {
-  .upper-block__content {
-    top: 50%;
-    padding: 0px 10px;
+  .upperblock__content {
+    line-height: 2rem;
+    font-size: 1.5rem;
+    right: 10px;
+    top: 48%;
   }
 }
-@media (max-width: 479.98px) {
-  .upper-block__content {
+@media (max-width: 600px) {
+  .upperblock__content {
+    font-size: 1.25rem;
+    right: 0px;
+    width: 65%;
+    top: 45%;
+  }
+}
+@media (max-width: 450px) {
+  .upperblock__content {
+    font-size: 1.25rem;
+    top: 40%;
+  }
+}
+@media (max-width: 340px) {
+  .upperblock__content {
     font-size: 1.125rem;
-    line-height: 1.5rem;
   }
 }
 
-.down-block {
+.downblock {
+  display: grid;
   max-width: 970px;
   margin: 0 auto;
 }
-.down-block__text {
-  margin: 0px 0px 4.1% 0px;
+.downblock__text {
+  text-align: center;
+  margin: 4.1% 0px;
+}
+@media (max-width: 479.98px) {
+  .downblock__text {
+    text-align: left;
+  }
 }
 
 .investor {
@@ -707,7 +713,9 @@ footer {
 }
 
 .btn {
-  display: inline-flex;
+  display: grid;
+  grid-template: minmax(50px, auto)/minmax(40px, auto);
+  justify-self: center;
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
@@ -723,6 +731,11 @@ footer {
 .btn_bl {
   background: #007397;
   color: #fff;
+}
+@media (max-width: 479.98px) {
+  .btn_bl {
+    justify-self: stretch;
+  }
 }
 @media (max-width: 479.98px) {
   .btn {
@@ -762,7 +775,7 @@ footer {
     transform: translate(-40%, -21%) rotate(25deg);
   }
 }
-@media (max-width: 620px) {
+@media (max-width: 600px) {
   .bluebg:before {
     width: 50%;
   }
